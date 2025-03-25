@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+   <div class="container">
+      <div class="clock">
+        <span id="hrs">00</span>
+        <span id="min">00</span>
+        <span id="sec">00</span>
+        <span id="ampm">PM</span>
+      </div>
+   </div>
+   <script>
+const hrs = document.getElementById("hrs")
+const min = document.getElementById("min")
+const sec = document.getElementById("sec")
+const ampm = document.getElementById("ampm")
+
+setInterval(() => {
+  const currentTime = new Date()
+  const hours = currentTime.getHours()
+  const period = hours > 12 ? 'PM' : 'AM';
+
+  hrs.innerHTML = (hours < 10 ? '0':'') + hours
+  min.innerHTML = (currentTime.getMinutes() < 10 ? '0':'') + currentTime.getMinutes()
+  sec.innerHTML = (currentTime.getSeconds() < 10 ? '0':'') + currentTime.getSeconds()
+  ampm.innerHTML = period
+}, 1000);
+
+   </script>
+  </body>
+</html>
