@@ -49,3 +49,9 @@ span::after{
 #sec::after{
   content: 'SECONDS';
 }
+
+@media (max-width:455px) {
+  .clock{
+    flex-direction: column;
+  }
+}
